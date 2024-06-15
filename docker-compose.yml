@@ -2,5 +2,10 @@ services:
   rabbitmq:
     image: rabbitmq
     container_name: rabbitmq
+    restart: always
     ports:
       - "5672:5672"
+    volumes:
+      - "data:/var/lib/rabbitmq"
+volumes:
+  data:
